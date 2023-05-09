@@ -59,7 +59,9 @@ export default function Configurator(props) {
         finalFocusRef={settingsRef}
         blockScrollOnMount={false}>
         <DrawerContent
-          bg='linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)'
+          bg=//'linear-gradient(111.84deg, rgba(211,211,211,1) 59.3%, rgba(255,255,255,0) 100%)'
+          
+          '(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)'
           backdropFilter='blur(42px)'>
           <DrawerHeader pt='24px' px='24px'>
             <DrawerCloseButton color='white' />

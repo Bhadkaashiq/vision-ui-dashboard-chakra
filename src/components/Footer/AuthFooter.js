@@ -40,22 +40,22 @@ export default function AuthFooter(props) {
         mb={{ base: "20px" }}>
         &copy; {1900 + new Date().getYear()},{" "}
         <Text as='span' mx='2px'>
-          {document.documentElement.dir === "rtl"
+          {document.documentElement.dir === ""
             ? " مصنوع من ❤️ بواسطة"
-            : "Made with ❤️ by "}
+            : " "}
         </Text>
         <Link href='https://www.simmmple.com' target='_blank'>
-          {document.documentElement.dir === "rtl"
+          {document.documentElement.dir === ""
             ? " توقيت الإبداعية"
-            : "Simmmple "}
+            : " "}
         </Link>
         &
         <Link href='https://www.creative-tim.com' target='_blank'>
-          {document.documentElement.dir === "rtl" ? "سيممبل " : " Creative Tim"}
+          {document.documentElement.dir === "rtl" ? "سيممبل " : " "}
         </Link>
         {document.documentElement.dir === "rtl"
           ? "للحصول على ويب أفضل"
-          : " for a better web"}
+          : " "}
       </Text>
       <List display='flex'>
         <ListItem
@@ -65,7 +65,7 @@ export default function AuthFooter(props) {
           <Link color='white' fontSize='sm' href='https://www.simmmple.com'>
             {document.documentElement.dir === "rtl"
               ? "توقيت الإبداعية"
-              : "Simmmple"}
+              : ""}
           </Link>
         </ListItem>
         <ListItem
@@ -73,7 +73,7 @@ export default function AuthFooter(props) {
             base: "20px",
           }}>
           <Link color='white' fontSize='sm' href='https://www.creative-tim.com'>
-            {document.documentElement.dir === "rtl" ? "سيممبل" : "Creative Tim"}
+            {document.documentElement.dir === "rtl" ? "سيممبل" : ""}
           </Link>
         </ListItem>
         <ListItem
@@ -85,7 +85,7 @@ export default function AuthFooter(props) {
             fontSize='sm'
             href='#blog'
             href='https://creative-tim.com/blog'>
-            {document.documentElement.dir === "rtl" ? "مدونة" : "Blog"}
+            {document.documentElement.dir === "rtl" ? "مدونة" : ""}
           </Link>
         </ListItem>
         <ListItem>
@@ -93,7 +93,7 @@ export default function AuthFooter(props) {
             color='white'
             href='#license'
             href='https://www.creative-tim.com/license'>
-            {document.documentElement.dir === "rtl" ? "رخصة" : "License"}
+            {document.documentElement.dir === "rtl" ? "رخصة" : ""}
           </Link>
         </ListItem>
       </List>

@@ -77,7 +77,8 @@ function DashboardTableRow(props) {
           <Progress
             colorScheme='brand'
             h='3px'
-            bg='#2D2E5F'
+            bg='#36557d'
+            //#2D2E5F 
             value={progression}
             borderRadius='30px'
           />

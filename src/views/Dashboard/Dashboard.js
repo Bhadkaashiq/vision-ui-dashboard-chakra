@@ -1,20 +1,4 @@
-/*!
 
-=========================================================
-* Vision UI Free Chakra - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-chakra
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-chakra/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 // Chakra imports
 import {
 	Box,
@@ -48,11 +32,19 @@ import CardHeader from 'components/Card/CardHeader.js';
 import BarChart from 'components/Charts/BarChart';
 import LineChart from 'components/Charts/LineChart';
 import IconBox from 'components/Icons/IconBox';
+import PieChart from 'components/Charts/PieChart';
+
+
+
+
+
+
+
 // Icons
 import { CartIcon, DocumentIcon, GlobeIcon, RocketIcon, StatsIcon, WalletIcon } from 'components/Icons/Icons.js';
 import DashboardTableRow from 'components/Tables/DashboardTableRow';
 import TimelineRow from 'components/Tables/TimelineRow';
-import React from 'react';
+// import React from 'react';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { BiHappy } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
@@ -62,11 +54,41 @@ import {
 	barChartDataDashboard,
 	barChartOptionsDashboard,
 	lineChartDataDashboard,
-	lineChartOptionsDashboard
+	lineChartOptionsDashboard,
+	
+	
+	
 } from 'variables/charts';
 import { dashboardTableData, timelineData } from 'variables/general';
 
-export default function Dashboard() {
+
+	
+
+	
+
+
+ export default function Dashboard() {
+
+// 	const [tweetCount, settweetCount] = useState({});
+
+// 	useEffect(() => {
+// 	  //getGitHubUserWithFetch();
+// 	  // getGiHubUserWithAxios();
+// 	}, []);
+  
+// 	const getGitHubUserWithFetch = async () => {
+// 	  const response = await fetch(gitHubUrl);
+// 	  const jsonData = await response.json();
+// 	  console.log('Response', jsonData);
+// 	  settweetCount(jsonData);
+// 	};
+  
+	// const getGiHubUserWithAxios = async () => {
+	//   const response = await axios.get(gitHubUrl);
+	//   settweetCount(response.data);
+	// };
+
+	
 	return (
 		<Flex flexDirection='column' pt={{ base: '120px', md: '75px' }}>
 			<SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
@@ -80,8 +102,21 @@ export default function Dashboard() {
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
-										$53,000
+										53,000
 									</StatNumber>
+
+                                    <div>
+
+									{/* {tweetCount ? (
+                                     <p>`The current tweetCount in London is {data.tweetCount}.`</p>
+                                       ) : (
+                                     <p>Loading...</p>
+                                    )} */}
+
+
+									</div>
+
+
 									<StatHelpText
 										alignSelf='flex-end'
 										justifySelf='flex-end'
@@ -90,7 +125,7 @@ export default function Dashboard() {
 										fontWeight='bold'
 										ps='3px'
 										fontSize='md'>
-										+55%
+										{/* +55% */}
 									</StatHelpText>
 								</Flex>
 							</Stat>
@@ -101,7 +136,7 @@ export default function Dashboard() {
 					</CardBody>
 				</Card>
 				{/* MiniStatistics Card */}
-				<Card minH='83px'>
+				{/* <Card minH='83px'>
 					<CardBody>
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
@@ -129,11 +164,11 @@ export default function Dashboard() {
 							</IconBox>
 						</Flex>
 					</CardBody>
-				</Card>
+				</Card> */}
 				{/* MiniStatistics Card */}
 				<Card>
 					<CardBody>
-						<Flex flexDirection='row' align='center' justify='center' w='100%'>
+						<Flex flexDirection='row' align='center' justify='flex-end' w='100%'>
 							<Stat>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
 									Sentiment 
@@ -150,7 +185,7 @@ export default function Dashboard() {
 										fontWeight='bold'
 										ps='3px'
 										fontSize='md'>
-										-14%
+										{/* -14% */}
 									</StatHelpText>
 								</Flex>
 							</Stat>
@@ -162,7 +197,7 @@ export default function Dashboard() {
 					</CardBody>
 				</Card>
 				{/* MiniStatistics Card */}
-				<Card>
+				{/* <Card>
 					<CardBody>
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
@@ -190,11 +225,11 @@ export default function Dashboard() {
 							</IconBox>
 						</Flex>
 					</CardBody>
-				</Card>
+				</Card> */}
 			</SimpleGrid>
 			<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', '2xl': '2fr 1.2fr 1.5fr' }} my='26px' gap='18px'>
 				{/* Welcome Card */}
-				<Card
+				{/* <Card
 					p='0px'
 					gridArea={{ md: '1 / 1 / 2 / 3', '2xl': 'auto' }}
 					bgImage={medusa}
@@ -247,15 +282,15 @@ export default function Dashboard() {
 							</Flex>
 						</Flex>
 					</CardBody>
-				</Card>
+				</Card> */}
 				{/* Satisfaction Rate */}
-				<Card gridArea={{ md: '2 / 1 / 3 / 2', '2xl': 'auto' }}>
+				{/* <Card gridArea={{ md: '2 / 1 / 3 / 2', '2xl': 'auto' }}>
 					<CardHeader mb='24px'>
 						<Flex direction='column'>
 							<Text color='#fff' fontSize='lg' fontWeight='bold' mb='4px'>
 								Satisfaction Rate
 							</Text>
-							<Text color='gray.400' fontSize='sm'>
+							<Text color='white.400' fontSize='sm'>
 								From all tweets
 							</Text>
 						</Flex>
@@ -283,7 +318,8 @@ export default function Dashboard() {
 							maxW={{ sm: '270px', md: '300px', lg: '100%' }}
 							mx={{ sm: 'auto', md: '0px' }}
 							p='18px 22px'
-							bg='linear-gradient(126.97deg, rgb(6, 11, 40) 28.26%, rgba(10, 14, 35) 91.2%)'
+							bg=''
+							//'linear-gradient(126.97deg, rgb(50, 50, 50) 28.26%, rgba(50, 25, 25) 91.2%)'
 							borderRadius='20px'
 							position='absolute'
 							bottom='5%'>
@@ -294,7 +330,7 @@ export default function Dashboard() {
 								<Text color='#fff' fontSize='28px' fontWeight='bold'>
 									95%
 								</Text>
-								<Text fontSize='xs' color='gray.400'>
+								<Text fontSize='xs' color='brand.400'>
 									Based on likes
 								</Text>
 							</Flex>
@@ -303,15 +339,15 @@ export default function Dashboard() {
 							</Text>
 						</Stack>
 					</Flex>
-				</Card>
+				</Card> */}
 				{/* Referral Tracking */}
-				<Card gridArea={{ md: '2 / 2 / 3 / 3', '2xl': 'auto' }}>
+				{/* <Card gridArea={{ md: '2 / 2 / 3 / 3', '2xl': 'auto' }}>
 					<Flex direction='column'>
 						<Flex justify='space-between' align='center' mb='40px'>
 							<Text color='#fff' fontSize='lg' fontWeight='bold'>
 								Report Tracking
 							</Text>
-							<Button borderRadius='12px' w='38px' h='38px' bg='#ffffff' _hover='none' _active='none'>
+							<Button borderRadius='12px' w='38px' h='38px' bg='' _hover='none' _active='none'>
 								<Icon as={IoEllipsisHorizontal} color='#7551FF' />
 							</Button>
 						</Flex>
@@ -322,7 +358,8 @@ export default function Dashboard() {
 									p='22px'
 									pe={{ sm: '22e', md: '8px', lg: '22px' }}
 									minW={{ sm: '220px', md: '140px', lg: '220px' }}
-									bg='linear-gradient(126.97deg, #87CEEB 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+									bg=''
+									//'linear-gradient(126.97deg, #16363d 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 									borderRadius='20px'
 									mb='20px'>
 									<Text color='gray.400' fontSize='sm' mb='4px'>
@@ -337,7 +374,8 @@ export default function Dashboard() {
 									p='22px'
 									pe={{ sm: '22px', md: '8px', lg: '22px' }}
 									minW={{ sm: '170px', md: '140px', lg: '170px' }}
-									bg='linear-gradient(126.97deg, #87CEEB 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+									bg=''
+									//'linear-gradient(126.97deg, #16363d 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 									borderRadius='20px'>
 									<Text color='gray.400' fontSize='sm' mb='4px'>
 										Bonus
@@ -375,7 +413,7 @@ export default function Dashboard() {
 							</Box>
 						</Flex>
 					</Flex>
-				</Card>
+				</Card> */}
 			</Grid>
 			<Grid
 				templateColumns={{ sm: '1fr', lg: '1.7fr 1.3fr' }}
@@ -387,11 +425,11 @@ export default function Dashboard() {
 					<CardHeader mb='20px' ps='22px'>
 						<Flex direction='column' alignSelf='flex-start'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-								Tweet Overview
+								Intent Overview
 							</Text>
 							<Text fontSize='md' fontWeight='medium' color='gray.400'>
 								<Text as='span' color='green.400' fontWeight='bold'>
-									(+5%) more
+									{/* (+5%) more */}
 								</Text>{' '}
 								in 2021
 							</Text>
@@ -403,13 +441,20 @@ export default function Dashboard() {
 							lineChartOptions={lineChartOptionsDashboard}
 						/>
 					</Box>
+					{/* <Box w='100%' minH={{ sm: '300px' }}>
+						<PieChart
+							PieChartData={PieChartDataDashboard}
+							PieChartOptions={PieChartOptionsDashboard}
+						/>
+					</Box> */}
 				</Card>
 				{/* Complaints Category */}
 				<Card p='16px'>
 					<CardBody>
 						<Flex direction='column' w='100%'>
 							<Box
-								bg='linear-gradient(126.97deg, #87CEEB 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+								bg=''
+								//'linear-gradient(126.97deg, #16363d 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 								borderRadius='20px'
 								display={{ sm: 'flex', md: 'block' }}
 								justify={{ sm: 'center', md: 'flex-start' }}
@@ -427,7 +472,7 @@ export default function Dashboard() {
 								</Text>
 								<Text fontSize='md' fontWeight='medium' color='gray.400'>
 									<Text as='span' color='green.400' fontWeight='bold'>
-										(+23%)
+										{/* (+23%) */}
 									</Text>{' '}
 									than last week
 								</Text>
@@ -467,9 +512,9 @@ export default function Dashboard() {
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										2.42m
+										88
 									</Text>
-									<Progress colorScheme='brand' bg='#2D2E5F' borderRadius='30px' h='5px' value={90} />
+									<Progress colorScheme='brand' bg=''/*'#16363d'*/ borderRadius='30px' h='5px' value={90} />
 								</Flex>
 								<Flex direction='column'>
 									<Flex alignItems='center'>
@@ -486,9 +531,9 @@ export default function Dashboard() {
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										2,400$
+										2,40
 									</Text>
-									<Progress colorScheme='brand' bg='#2D2E5F' borderRadius='30px' h='5px' value={30} />
+									<Progress colorScheme='brand' bg=''/*'#2D2E5F'*/ borderRadius='30px' h='5px' value={30} />
 								</Flex>
 								<Flex direction='column'>
 									<Flex alignItems='center'>
@@ -507,7 +552,7 @@ export default function Dashboard() {
 										my='6px'>
 										320
 									</Text>
-									<Progress colorScheme='brand' bg='#2D2E5F' borderRadius='30px' h='5px' value={50} />
+									<Progress colorScheme='brand' bg=''/*'#2D2E5F'*/ borderRadius='30px' h='5px' value={50} />
 								</Flex>
 							</SimpleGrid>
 						</Flex>
@@ -515,8 +560,8 @@ export default function Dashboard() {
 				</Card>
 			</Grid>
 			<Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: '2fr 1fr' }} gap='24px'>
-				{/* Projects */}
-				<Card p='16px' overflowX={{ sm: 'scroll', xl: 'hidden' }}>
+				{/* Projects/sentiment analysis */}
+				{/* <Card p='16px' overflowX={{ sm: 'scroll', xl: 'hidden' }}>
 					<CardHeader p='12px 0px 28px 0px'>
 						<Flex direction='column'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' pb='8px'>
@@ -569,9 +614,9 @@ export default function Dashboard() {
 							})}
 						</Tbody>
 					</Table>
-				</Card>
+				</Card> */}
 				{/* Orders Overview */}
-				<Card>
+				{/* <Card>
 					<CardHeader mb='32px'>
 						<Flex direction='column'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
@@ -604,7 +649,7 @@ export default function Dashboard() {
 							})}
 						</Flex>
 					</CardBody>
-				</Card>
+				</Card> */}
 			</Grid>
 		</Flex>
 	);

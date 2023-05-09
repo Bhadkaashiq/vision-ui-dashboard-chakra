@@ -188,8 +188,8 @@ function Sidebar(props) {
   var links = <>{createLinks(routes)}</>;
   //  BRAND
   //  Chakra Color Mode
-  let sidebarBg =
-    "linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)";
+  let sidebarBg =''
+    // "linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%)";
   let sidebarRadius = "16px";
   let sidebarMargins = "16px 0px 16px 16px";
   var brand = (
@@ -456,7 +456,7 @@ export function SidebarResponsive(props) {
         <DrawerOverlay />
         <DrawerContent
           backdropFilter='blur(10px)'
-          bg='linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%); '
+          // bg='linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%); '
           w='250px'
           maxW='250px'
           ms={{

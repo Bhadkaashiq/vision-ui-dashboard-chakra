@@ -340,7 +340,7 @@ export default function Dashboard() {
 									p='22px'
 									pe={{ sm: '22px', md: '8px', lg: '22px' }}
 									minW={{ sm: '170px', md: '140px', lg: '170px' }}
-									bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+									bg='linear-gradient(126.97deg, #000000 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 									borderRadius='20px'>
 									<Text color='gray.400' fontSize='sm' mb='4px'>
 										Bonus
@@ -412,7 +412,7 @@ export default function Dashboard() {
 					<CardBody>
 						<Flex direction='column' w='100%'>
 							<Box
-								bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+								bg='linear-gradient(126.97deg, #000000 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 								borderRadius='20px'
 								display={{ sm: 'flex', md: 'block' }}
 								justify={{ sm: 'center', md: 'flex-start' }}

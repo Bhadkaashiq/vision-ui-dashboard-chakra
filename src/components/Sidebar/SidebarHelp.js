@@ -40,10 +40,10 @@ export function SidebarHelp(props) {
       <IconBox width='35px' h='35px' bg='white' mb='auto'>
         <QuestionIcon color='brand.200' h='18px' w='18px' />
       </IconBox>
-      <Text fontSize='sm' color='white' fontWeight='bold'>
+      <Text fontSize='sm' color='black' fontWeight='bold'>
         Thanks for choosing US!!
       </Text>
-      <Text fontSize='xs' color='white' mb='10px'>
+      <Text fontSize='xs' color='black' mb='10px'>
         Please check our docs
       </Text>
       <Link
