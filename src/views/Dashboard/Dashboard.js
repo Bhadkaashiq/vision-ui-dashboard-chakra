@@ -76,7 +76,7 @@ export default function Dashboard() {
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									Today's Money
+									Today's tweet Analysed
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
@@ -136,7 +136,7 @@ export default function Dashboard() {
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									New Clients
+									Sentiment 
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
@@ -167,11 +167,11 @@ export default function Dashboard() {
 						<Flex flexDirection='row' align='center' justify='center' w='100%'>
 							<Stat me='auto'>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									Total Sales
+									Total tweet
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff' fontWeight='bold'>
-										$173,000
+										173,000
 									</StatNumber>
 									<StatHelpText
 										alignSelf='flex-end'
@@ -204,10 +204,10 @@ export default function Dashboard() {
 						<Flex flexDirection={{ sm: 'column', lg: 'row' }} w='100%' h='100%'>
 							<Flex flexDirection='column' h='100%' p='22px' minW='60%' lineHeight='1.6'>
 								<Text fontSize='sm' color='gray.400' fontWeight='bold'>
-									Welcome back,
+									Tweet Analysed ,
 								</Text>
 								<Text fontSize='28px' color='#fff' fontWeight='bold' mb='18px'>
-									Mark Johnson
+									Subham 
 								</Text>
 								<Text fontSize='md' color='gray.400' fontWeight='normal' mb='auto'>
 									Glad to see you again! <br />
@@ -256,17 +256,17 @@ export default function Dashboard() {
 								Satisfaction Rate
 							</Text>
 							<Text color='gray.400' fontSize='sm'>
-								From all projects
+								From all tweets
 							</Text>
 						</Flex>
 					</CardHeader>
 					<Flex direction='column' justify='center' align='center'>
-						<Box zIndex='-1'>
+						<Box zIndex='-1'> 
 							<CircularProgress
 								size={200}
 								value={80}
 								thickness={6}
-								color='#582CFF'
+								color='#87CEEB'      //'#582CFF'
 								variant='vision'
 								rounded>
 								<CircularProgressLabel>
@@ -309,9 +309,9 @@ export default function Dashboard() {
 					<Flex direction='column'>
 						<Flex justify='space-between' align='center' mb='40px'>
 							<Text color='#fff' fontSize='lg' fontWeight='bold'>
-								Referral Tracking
+								Report Tracking
 							</Text>
-							<Button borderRadius='12px' w='38px' h='38px' bg='#22234B' _hover='none' _active='none'>
+							<Button borderRadius='12px' w='38px' h='38px' bg='#ffffff' _hover='none' _active='none'>
 								<Icon as={IoEllipsisHorizontal} color='#7551FF' />
 							</Button>
 						</Flex>
@@ -322,7 +322,7 @@ export default function Dashboard() {
 									p='22px'
 									pe={{ sm: '22e', md: '8px', lg: '22px' }}
 									minW={{ sm: '220px', md: '140px', lg: '220px' }}
-									bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+									bg='linear-gradient(126.97deg, #87CEEB 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 									borderRadius='20px'
 									mb='20px'>
 									<Text color='gray.400' fontSize='sm' mb='4px'>
@@ -337,7 +337,7 @@ export default function Dashboard() {
 									p='22px'
 									pe={{ sm: '22px', md: '8px', lg: '22px' }}
 									minW={{ sm: '170px', md: '140px', lg: '170px' }}
-									bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+									bg='linear-gradient(126.97deg, #87CEEB 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 									borderRadius='20px'>
 									<Text color='gray.400' fontSize='sm' mb='4px'>
 										Bonus
@@ -382,12 +382,12 @@ export default function Dashboard() {
 				maxW={{ sm: '100%', md: '100%' }}
 				gap='24px'
 				mb='24px'>
-				{/* Sales Overview */}
+				{/* Tweet Overview */}
 				<Card p='28px 0px 0px 0px'>
 					<CardHeader mb='20px' ps='22px'>
 						<Flex direction='column' alignSelf='flex-start'>
 							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-								Sales Overview
+								Tweet Overview
 							</Text>
 							<Text fontSize='md' fontWeight='medium' color='gray.400'>
 								<Text as='span' color='green.400' fontWeight='bold'>
@@ -404,12 +404,12 @@ export default function Dashboard() {
 						/>
 					</Box>
 				</Card>
-				{/* Active Users */}
+				{/* Complaints Category */}
 				<Card p='16px'>
 					<CardBody>
 						<Flex direction='column' w='100%'>
 							<Box
-								bg='linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
+								bg='linear-gradient(126.97deg, #87CEEB 28.26%, rgba(4, 12, 48, 0.5) 91.2%)'
 								borderRadius='20px'
 								display={{ sm: 'flex', md: 'block' }}
 								justify={{ sm: 'center', md: 'flex-start' }}
@@ -423,7 +423,7 @@ export default function Dashboard() {
 							</Box>
 							<Flex direction='column' mt='24px' mb='36px' alignSelf='flex-start'>
 								<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
-									Active Users
+									Complaints Category 
 								</Text>
 								<Text fontSize='md' fontWeight='medium' color='gray.400'>
 									<Text as='span' color='green.400' fontWeight='bold'>
@@ -439,7 +439,7 @@ export default function Dashboard() {
 											<WalletIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Users
+											Ticketing issue 
 										</Text>
 									</Flex>
 									<Text
@@ -450,7 +450,7 @@ export default function Dashboard() {
 										my='6px'>
 										32,984
 									</Text>
-									<Progress colorScheme='brand' bg='#2D2E5F' borderRadius='30px' h='5px' value={20} />
+									<Progress colorScheme='brand' bg='#ffffff' borderRadius='30px' h='5px' value={20} />
 								</Flex>
 								<Flex direction='column'>
 									<Flex alignItems='center'>
@@ -458,7 +458,7 @@ export default function Dashboard() {
 											<RocketIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Clicks
+											Crew Behaviour 
 										</Text>
 									</Flex>
 									<Text
@@ -477,7 +477,7 @@ export default function Dashboard() {
 											<CartIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Sales
+											Vehicle Related 
 										</Text>
 									</Flex>
 									<Text
@@ -496,7 +496,7 @@ export default function Dashboard() {
 											<StatsIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Items
+											Route
 										</Text>
 									</Flex>
 									<Text

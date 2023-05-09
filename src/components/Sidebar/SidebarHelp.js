@@ -41,7 +41,7 @@ export function SidebarHelp(props) {
         <QuestionIcon color='brand.200' h='18px' w='18px' />
       </IconBox>
       <Text fontSize='sm' color='white' fontWeight='bold'>
-        Need help?
+        Thanks for choosing US!!
       </Text>
       <Text fontSize='xs' color='white' mb='10px'>
         Please check our docs

@@ -110,7 +110,7 @@ function Profile() {
 									color='#fff'
 									fontWeight='bold'
 									ms={{ sm: '8px', md: '0px' }}>
-									Mark Johnson
+									Subham 
 								</Text>
 								<Text fontSize={{ sm: 'sm', md: 'md' }} color='gray.400'>
 									mark@simmmple.com
@@ -182,7 +182,7 @@ function Profile() {
 							Welcome back!
 						</Text>
 						<Text color='#fff' fontSize='sm' mb='auto'>
-							Nice to see you, Mark Johnson!
+							Nice to see you, Subham!
 						</Text>
 						<Button alignSelf='flex-start' variant='no-hover' bg='transparent' p='0px'>
 							<Text
@@ -218,7 +218,7 @@ function Profile() {
 								Car Informations
 							</Text>
 							<Text fontSize='sm' color='gray.400'>
-								Hello, Mark Johnson! Your Car is ready.
+								Hello, Subham ! Your report is ready.
 							</Text>
 						</Flex>
 					</CardHeader>
