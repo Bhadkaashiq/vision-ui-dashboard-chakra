@@ -34,6 +34,9 @@ import LineChart from 'components/Charts/LineChart';
 import IconBox from 'components/Icons/IconBox';
 import PieChart from 'components/Charts/PieChart';
 
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 
 
 
@@ -44,7 +47,7 @@ import PieChart from 'components/Charts/PieChart';
 import { CartIcon, DocumentIcon, GlobeIcon, RocketIcon, StatsIcon, WalletIcon } from 'components/Icons/Icons.js';
 import DashboardTableRow from 'components/Tables/DashboardTableRow';
 import TimelineRow from 'components/Tables/TimelineRow';
-// import React from 'react';
+
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { BiHappy } from 'react-icons/bi';
 import { BsArrowRight } from 'react-icons/bs';
@@ -60,6 +63,7 @@ import {
 	
 } from 'variables/charts';
 import { dashboardTableData, timelineData } from 'variables/general';
+import { getEffectiveTypeParameterDeclarations } from 'typescript';
 
 
 	
@@ -69,29 +73,32 @@ import { dashboardTableData, timelineData } from 'variables/general';
 
  export default function Dashboard() {
 
-// 	const [tweetCount, settweetCount] = useState({});
 
-// 	useEffect(() => {
-// 	  //getGitHubUserWithFetch();
-// 	  // getGiHubUserWithAxios();
-// 	}, []);
-  
-// 	const getGitHubUserWithFetch = async () => {
-// 	  const response = await fetch(gitHubUrl);
-// 	  const jsonData = await response.json();
-// 	  console.log('Response', jsonData);
-// 	  settweetCount(jsonData);
-// 	};
-  
-	// const getGiHubUserWithAxios = async () => {
-	//   const response = await axios.get(gitHubUrl);
-	//   settweetCount(response.data);
-	// };
+	const [data, setdata] = useState({});
+
+  useEffect(() => {
+    
+	getData();
+  }, []);
+
+	function getData() {
+		console.log('abs');
+		axios
+		  .post("https://jw1so5sptg.execute-api.us-east-1.amazonaws.com/beta")
+		  .then((response) => {
+			console.log(JSON.parse(response.data.body));
+			return setdata( JSON.parse(response.data.body));
+		  })
+		  .catch((error) => console.log(error));
+	  }
+	
+
+
 
 	
 	return (
 		<Flex flexDirection='column' pt={{ base: '120px', md: '75px' }}>
-			<SimpleGrid columns={{ sm: 1, md: 2, xl: 4 }} spacing='24px'>
+			<SimpleGrid columns={{ sm: 1, md: 2, xl: 3 }} spacing='24px'>
 				{/* MiniStatistics Card */}
 				<Card>
 					<CardBody>
@@ -102,19 +109,8 @@ import { dashboardTableData, timelineData } from 'variables/general';
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
-										53,000
+									{data?.message?.count_card}
 									</StatNumber>
-
-                                    <div>
-
-									{/* {tweetCount ? (
-                                     <p>`The current tweetCount in London is {data.tweetCount}.`</p>
-                                       ) : (
-                                     <p>Loading...</p>
-                                    )} */}
-
-
-									</div>
 
 
 									<StatHelpText
@@ -169,14 +165,17 @@ import { dashboardTableData, timelineData } from 'variables/general';
 				<Card>
 					<CardBody>
 						<Flex flexDirection='row' align='center' justify='flex-end' w='100%'>
+						
 							<Stat>
 								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
-									Sentiment 
+								Sentiment(positive)
 								</StatLabel>
 								<Flex>
 									<StatNumber fontSize='lg' color='#fff'>
-										+3,020
+									{data?.message?.sentiment.Positive}
 									</StatNumber>
+
+									
 									<StatHelpText
 										alignSelf='flex-end'
 										justifySelf='flex-end'
@@ -194,7 +193,65 @@ import { dashboardTableData, timelineData } from 'variables/general';
 								<DocumentIcon h={'24px'} w={'24px'} color='#fff' />
 							</IconBox>
 						</Flex>
+						
+							<Stat>
+								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
+								Sentiment(negative)
+								</StatLabel>
+								<Flex>
+									<StatNumber fontSize='lg' color='#fff'>
+									{data?.message?.sentiment.Negative}
+									</StatNumber>
+
+									
+
+
+									<StatHelpText
+										alignSelf='flex-end'
+										justifySelf='flex-end'
+										m='0px'
+										color='red.500'
+										fontWeight='bold'
+										ps='3px'
+										fontSize='md'>
+										{/* -14% */}
+									</StatHelpText>
+								</Flex>
+							</Stat>
+							<Spacer />
+							<IconBox as='box' h={'45px'} w={'45px'} bg='brand.200'>
+								<DocumentIcon h={'24px'} w={'24px'} color='#fff' />
+							</IconBox>
+						
+							<Stat>
+								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
+								Sentiment(Neutral)
+								</StatLabel>
+								<Flex>
+									<StatNumber fontSize='lg' color='#fff'>
+									{data?.message?.sentiment.Neutral}
+									</StatNumber>
+
+									
+
+{/* 
+            <p>Sentiment(negative): {data?.message?.sentiment.Negative}</p>
+            <p>Sentiment(neutral): {data?.message?.sentiment.Neutral}</p> */}
+									<StatHelpText
+										alignSelf='flex-end'
+										justifySelf='flex-end'
+										m='0px'
+										color='red.500'
+										fontWeight='bold'
+										ps='3px'
+										fontSize='md'>
+										{/* -14% */}
+									</StatHelpText>
+								</Flex>
+							</Stat>
 					</CardBody>
+
+					
 				</Card>
 				{/* MiniStatistics Card */}
 				{/* <Card>
@@ -441,12 +498,11 @@ import { dashboardTableData, timelineData } from 'variables/general';
 							lineChartOptions={lineChartOptionsDashboard}
 						/>
 					</Box>
-					{/* <Box w='100%' minH={{ sm: '300px' }}>
+					<Box w='100%' minH={{ sm: '300px' }}>
 						<PieChart
-							PieChartData={PieChartDataDashboard}
-							PieChartOptions={PieChartOptionsDashboard}
+							
 						/>
-					</Box> */}
+					</Box>
 				</Card>
 				{/* Complaints Category */}
 				<Card p='16px'>
@@ -474,7 +530,7 @@ import { dashboardTableData, timelineData } from 'variables/general';
 									<Text as='span' color='green.400' fontWeight='bold'>
 										{/* (+23%) */}
 									</Text>{' '}
-									than last week
+									
 								</Text>
 							</Flex>
 							<SimpleGrid gap={{ sm: '12px' }} columns={4}>
@@ -484,7 +540,10 @@ import { dashboardTableData, timelineData } from 'variables/general';
 											<WalletIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Ticketing issue 
+										<p>
+                 Vehicle Related Issue
+                  
+                </p>
 										</Text>
 									</Flex>
 									<Text
@@ -493,7 +552,8 @@ import { dashboardTableData, timelineData } from 'variables/general';
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										32,984
+										{data?.message?.sub_super["Vehicle Related Issue"][0][0] &&
+                    data?.message?.sub_super["Vehicle Related Issue"][0][1]}
 									</Text>
 									<Progress colorScheme='brand' bg='#ffffff' borderRadius='30px' h='5px' value={20} />
 								</Flex>
@@ -503,7 +563,10 @@ import { dashboardTableData, timelineData } from 'variables/general';
 											<RocketIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Crew Behaviour 
+										<p>
+                 Crew Behaviors
+                  
+                </p>
 										</Text>
 									</Flex>
 									<Text
@@ -512,7 +575,8 @@ import { dashboardTableData, timelineData } from 'variables/general';
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										88
+										{data?.message?.sub_super["Crew Behaviors"][0][0] &&
+                    data?.message?.sub_super["Crew Behaviors"][0][1]}
 									</Text>
 									<Progress colorScheme='brand' bg=''/*'#16363d'*/ borderRadius='30px' h='5px' value={90} />
 								</Flex>
@@ -522,7 +586,10 @@ import { dashboardTableData, timelineData } from 'variables/general';
 											<CartIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Vehicle Related 
+										
+                    PASS/Reserved Seat Issue
+                  
+                
 										</Text>
 									</Flex>
 									<Text
@@ -531,7 +598,8 @@ import { dashboardTableData, timelineData } from 'variables/general';
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										2,40
+										{data?.message?.sub_super["PASS/Reserved Seat Issue"][0][0] &&
+                    data?.message?.sub_super["PASS/Reserved Seat Issue"][0][1]}
 									</Text>
 									<Progress colorScheme='brand' bg=''/*'#2D2E5F'*/ borderRadius='30px' h='5px' value={30} />
 								</Flex>
@@ -541,7 +609,8 @@ import { dashboardTableData, timelineData } from 'variables/general';
 											<StatsIcon h={'15px'} w={'15px'} color='#fff' />
 										</IconBox>
 										<Text fontSize='sm' color='gray.400'>
-											Route
+										Others
+                  
 										</Text>
 									</Flex>
 									<Text
@@ -550,7 +619,8 @@ import { dashboardTableData, timelineData } from 'variables/general';
 										fontWeight='bold'
 										mb='6px'
 										my='6px'>
-										320
+										{data?.message?.sub_super["PASS/Reserved Seat Issue"][0][0] &&
+                    data?.message?.sub_super["PASS/Reserved Seat Issue"][0][1]}
 									</Text>
 									<Progress colorScheme='brand' bg=''/*'#2D2E5F'*/ borderRadius='30px' h='5px' value={50} />
 								</Flex>
