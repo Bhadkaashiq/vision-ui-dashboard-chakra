@@ -94,6 +94,15 @@ export const lineChartDataDashboard = [
   },
 ];
 
+const today = new Date();
+const lastSevenDays = [...Array(7)].map((_, i) => {
+  const d = new Date(today);
+  d.setDate(today.getDate() - i);
+  return d.toISOString().slice(0, 10);
+});
+// console.log(lastSevenDays);
+
+
 export const lineChartOptionsDashboard = {
   chart: {
     toolbar: {
@@ -110,22 +119,11 @@ export const lineChartOptionsDashboard = {
     curve: "smooth",
     width: 3,
   },
+
+  
   xaxis: {
     type: "datetime",
-    categories: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
+    categories: lastSevenDays ,
     labels: {
       style: {
         colors: "#c8cfca",

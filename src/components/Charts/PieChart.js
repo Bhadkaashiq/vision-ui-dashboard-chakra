@@ -3,7 +3,7 @@ import Chart from "react-apexcharts";
 
 const PieChart = () => {
   const chartData = {
-    series: [44, 55, 13],
+    series: [4, 3, 1],
     options: {
       labels: ["Positive", "Negative", "Neutral"],
       colors: ["#2CD9FF", "#582CFF", "#FF6B8A"],

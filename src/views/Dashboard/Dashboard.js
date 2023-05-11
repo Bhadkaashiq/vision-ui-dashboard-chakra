@@ -231,12 +231,6 @@ import { getEffectiveTypeParameterDeclarations } from 'typescript';
 									<StatNumber fontSize='lg' color='#fff'>
 									{data?.message?.sentiment.Neutral}
 									</StatNumber>
-
-									
-
-{/* 
-            <p>Sentiment(negative): {data?.message?.sentiment.Negative}</p>
-            <p>Sentiment(neutral): {data?.message?.sentiment.Neutral}</p> */}
 									<StatHelpText
 										alignSelf='flex-end'
 										justifySelf='flex-end'
@@ -478,12 +472,83 @@ import { getEffectiveTypeParameterDeclarations } from 'typescript';
 				gap='24px'
 				mb='24px'>
 				{/* Tweet Overview */}
+
+                <Card>
+					<CardBody>
+						<Flex flexDirection='row' align='center' justify='center' w='100%'>
+							<Stat me='auto'>
+								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
+									Today's Count of Appeal 
+								</StatLabel>
+								<Flex>
+									<StatNumber fontSize='lg' color='#fff'>
+									  {data?.message?.intent["2023-05-04"][0][0] &&
+                  data?.message?.intent["2023-05-04"][0][1]}
+									</StatNumber>
+
+
+									<StatHelpText
+										alignSelf='flex-end'
+										justifySelf='flex-end'
+										m='0px'
+										color='green.400'
+										fontWeight='bold'
+										ps='3px'
+										fontSize='md'>
+										{/* +55% */}
+									</StatHelpText>
+								</Flex>
+							</Stat>
+							<IconBox as='box' h={'45px'} w={'45px'} bg='brand.200'>
+								<WalletIcon h={'24px'} w={'24px'} color='#fff' />
+							</IconBox>
+						</Flex>
+					</CardBody>
+				</Card>
+                 //Complain
+				<Card>
+					<CardBody>
+						<Flex flexDirection='row' align='center' justify='center' w='100%'>
+							<Stat me='auto'>
+								<StatLabel fontSize='sm' color='gray.400' fontWeight='bold' pb='2px'>
+									Count of Complain
+								</StatLabel>
+								<Flex>
+									<StatNumber fontSize='lg' color='#fff'>
+									  {data?.message?.intent["2023-05-04"][0][0] &&
+                  data?.message?.intent["2023-05-04"][0][1]}
+									</StatNumber>
+
+
+									<StatHelpText
+										alignSelf='flex-end'
+										justifySelf='flex-end'
+										m='0px'
+										color='green.400'
+										fontWeight='bold'
+										ps='3px'
+										fontSize='md'>
+										{/* +55% */}
+									</StatHelpText>
+								</Flex>
+							</Stat>
+							<IconBox as='box' h={'45px'} w={'45px'} bg='brand.200'>
+								<WalletIcon h={'24px'} w={'24px'} color='#fff' />
+							</IconBox>
+						</Flex>
+					</CardBody>
+				</Card>
+
+				
+
+
+
 				<Card p='28px 0px 0px 0px'>
 					<CardHeader mb='20px' ps='22px'>
 						<Flex direction='column' alignSelf='flex-start'>
-							<Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
+							{/* <Text fontSize='lg' color='#fff' fontWeight='bold' mb='6px'>
 								Intent Overview
-							</Text>
+							</Text> */}
 							<Text fontSize='md' fontWeight='medium' color='gray.400'>
 								<Text as='span' color='green.400' fontWeight='bold'>
 									{/* (+5%) more */}
@@ -493,10 +558,10 @@ import { getEffectiveTypeParameterDeclarations } from 'typescript';
 						</Flex>
 					</CardHeader>
 					<Box w='100%' minH={{ sm: '300px' }}>
-						<LineChart
+						{/* <LineChart
 							lineChartData={lineChartDataDashboard}
 							lineChartOptions={lineChartOptionsDashboard}
-						/>
+						/> */}
 					</Box>
 					<Box w='100%' minH={{ sm: '300px' }}>
 						<PieChart
